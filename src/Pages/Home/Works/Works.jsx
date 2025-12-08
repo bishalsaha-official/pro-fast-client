@@ -4,7 +4,7 @@ const Works = () => {
 
     return (
         <section className="py-10">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-10/12 mx-auto">
 
                 {/* Title */}
                 <h2 className="text-3xl font-bold text-[#03373D] mb-10 text-left">How It Works</h2>
