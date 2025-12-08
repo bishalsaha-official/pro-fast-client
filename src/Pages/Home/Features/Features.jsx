@@ -34,8 +34,6 @@ const Features = () => {
                             alt={card.title}
                             className="w-3xs h-40 object-contain"
                         />
-
-
                         <div>
                             <h3 className="text-2xl font-semibold mb-2">{card.title}</h3>
                             <p className="text-gray-600 leading-relaxed">{card.desc}</p>
