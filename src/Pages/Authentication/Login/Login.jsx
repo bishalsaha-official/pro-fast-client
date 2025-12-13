@@ -25,6 +25,7 @@ const Login = () => {
                         {...register("email", { required: true })}
                         className="input input-bordered w-full"
                     />
+                    {errors.email && <span>Email field is required</span>}
                 </div>
 
                 <div className="form-control">
@@ -34,9 +35,11 @@ const Login = () => {
                     <input
                         type="password"
                         placeholder="Enter your password"
-                        {...register("password", { required: true })}
+                        {...register("password", { required: true , minLength: 6})}
                         className="input input-bordered w-full"
                     />
+                    {errors.password?.type === 'required' && <span>Password is required</span>}
+                    {errors.password?.type === 'minLength' && <span>Password must be at 6 character or longer</span>}
                 </div>
                 <div><a className="link link-hover">Forgot password?</a></div>
                 <button className="btn btn-success w-full mt-4">Login</button>
