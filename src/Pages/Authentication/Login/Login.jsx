@@ -1,15 +1,19 @@
 import { useForm } from "react-hook-form";
+import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
-    const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm()
+    const { register, handleSubmit, formState: { errors }, } = useForm()
+    const { createUser } = useAuth()
 
     const onSubmit = (data) => {
         console.log(data)
+        createUser(data.email, data.password)
+            .then(result => {
+                console.log(result)
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
     }
 
     return (
@@ -35,7 +39,7 @@ const Login = () => {
                     <input
                         type="password"
                         placeholder="Enter your password"
-                        {...register("password", { required: true , minLength: 6})}
+                        {...register("password", { required: true, minLength: 6 })}
                         className="input input-bordered w-full"
                     />
                     {errors.password?.type === 'required' && <span>Password is required</span>}
