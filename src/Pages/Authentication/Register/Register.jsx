@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import { Link } from "react-router";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
-const Login = () => {
+const Register = () => {
     const { register, handleSubmit, formState: { errors }, } = useForm()
     const { createUser } = useAuth()
 
@@ -19,6 +20,7 @@ const Login = () => {
 
     return (
         <div className="p-10 flex flex-col justify-center">
+            <h2 className="text-4xl font-bold">Create An Account</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <div className="form-control">
                     <label className="label">
@@ -46,11 +48,14 @@ const Login = () => {
                     {errors.password?.type === 'required' && <span>Password is required</span>}
                     {errors.password?.type === 'minLength' && <span>Password must be at 6 character or longer</span>}
                 </div>
-                <button className="btn btn-success w-full mt-4">Login</button>
-                <p><span>Don't have an account? <Link to='/register'>Register</Link></span></p>
+                <button className="btn btn-success w-full mt-4">Register</button>
+                <p><span>Already have an account? <Link to='/login'>Login</Link></span></p>
             </form>
+            <div>
+                <SocialLogin></SocialLogin>
+            </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;
