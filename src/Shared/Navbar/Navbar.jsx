@@ -6,6 +6,7 @@ const Navbar = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/about'>About Us</NavLink></li>
         <li><NavLink to='/coverage'>Coverage</NavLink></li>
+        <li><NavLink to='/sendParcel'>Send A Parcel</NavLink></li>
         <li><NavLink to='/pricing'>Pricing</NavLink></li>
         <li><NavLink to='/berider'>Be a Rider</NavLink></li>
     </>
@@ -36,7 +37,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-2">
-                <Link to='/signin'><button className="btn">SignIn</button></Link>
+                <Link to='/login'><button className="btn btn-primary text-black">LogIn</button></Link>
                 <Link to='/rider'><button className="btn">Be A Rider</button></Link>
             </div>
         </div>
